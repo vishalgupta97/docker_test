@@ -1,0 +1,3 @@
+FROM alpine
+RUN apk --update add git
+RUN git clone https://github.com/vishalgupta97/sudoku.git

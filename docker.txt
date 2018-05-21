@@ -1,0 +1,7 @@
+docker pull imagename:tag => for downloading images
+
+docker build -t dockergit .
+
+docker run -dti --name container_name image_name
+
+docker exec -ti container_name command
