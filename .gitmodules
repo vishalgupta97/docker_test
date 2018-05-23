@@ -1,3 +1,0 @@
-[submodule "docker-session"]
-	path = docker-session
-	url = https://github.com/juniorojha/docker-session.git
