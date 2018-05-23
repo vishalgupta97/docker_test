@@ -1,6 +1,8 @@
-FROM ubuntu:16.04
+FROM gcc
 
-COPY ./a.out a.out
+COPY test.c /
+
+RUN gcc test.c
 
 ENTRYPOINT ./a.out
 

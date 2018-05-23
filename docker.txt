@@ -1,6 +1,7 @@
 docker pull imagename:tag => for downloading images
 
 docker build -t dockergit .
+-f command in build if docker file is not named Dockerfile
 
 docker run -dti --name container_name -p hostport:container_port -v host_dir:container_dir image_name
 
