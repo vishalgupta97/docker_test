@@ -2,6 +2,12 @@ docker pull imagename:tag => for downloading images
 
 docker build -t dockergit .
 
-docker run -dti --name container_name image_name
+docker run -dti --name container_name -p hostport:container_port -v host_dir:container_dir image_name
+
+For current directory : host_dir = %cd%
 
 docker exec -ti container_name command
+
+ADD and COPY : Add allows for url in src and decompressing of tar file.
+
+For os version: uname -a, distribution version: lsb_release -a or cat /etc/*release
