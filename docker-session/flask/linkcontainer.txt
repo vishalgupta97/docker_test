@@ -1,0 +1,20 @@
+Building two containers and linking them using volumes
+
+docker volume create test
+
+docker build -t flaskt .
+
+docker run -v test:/app -dti ubuntu:16.04 sleep infinity
+
+docker cp . sharp_villani:app/
+
+docker run -d --name flaskt -v test:/app -p 5005:5000 flaskt
+
+visit localhost:5005
+
+docker exec -ti sharp_villani bash
+	nano app.py
+		make changes and save
+		
+changes will be visible on localhost:5005
+
