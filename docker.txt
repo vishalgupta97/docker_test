@@ -12,3 +12,5 @@ docker exec -ti container_name command
 ADD and COPY : Add allows for url in src and decompressing of tar file.
 
 For os version: uname -a, distribution version: lsb_release -a or cat /etc/*release
+
+docker rmi $(docker images -f "dangling=true" -q) => deleting dangling images
