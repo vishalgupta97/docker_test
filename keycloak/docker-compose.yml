@@ -8,19 +8,13 @@ services:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
       DB_VENDOR: POSTGRES
-      DB_ADDR: postgres
-      DB_DATABASE: keycloak
       POSTGRES_PORT_5432_TCP_ADDR: postgres
       POSTGRES_PORT_5432_TCP_PORT: 5432
-      DB_PORT: 5432
-      POSTGRES_PASSWORD: test
     depends_on:
       - postgres
   postgres:
     image: "postgres" 
-    ports:
-      - "5432:5432"
     environment:
       POSTGRES_DB: keycloak
       POSTGRES_USER: keycloak
-      POSTGRES_PASSWORD: test
+      POSTGRES_PASSWORD: password
