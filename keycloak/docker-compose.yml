@@ -1,20 +1,25 @@
 version: '3'
 services:
   keycloak:
-    image: "jboss/keycloak:3.4.3.Final"
+    image: jboss/keycloak
     ports:
-      - "8080:8080"
+     - "8080:8080"
     environment:
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: admin
-      DB_VENDOR: POSTGRES
-      POSTGRES_PORT_5432_TCP_ADDR: postgres
-      POSTGRES_PORT_5432_TCP_PORT: 5432
+     - KEYCLOAK_USER=keycloak
+     - KEYCLOAK_PASSWORD=password
+     - DB_VENDOR=POSTGRES
     depends_on:
-      - postgres
+     - postgres
+    networks:
+     - keycloak-network
   postgres:
-    image: "postgres" 
+    image: postgres
     environment:
-      POSTGRES_DB: keycloak
-      POSTGRES_USER: keycloak
-      POSTGRES_PASSWORD: password
+     - POSTGRES_DB=keycloak
+     - POSTGRES_USER=keycloak
+     - POSTGRES_PASSWORD=password
+    networks:
+     - keycloak-network
+networks:
+  keycloak-network:
+    driver: bridge
